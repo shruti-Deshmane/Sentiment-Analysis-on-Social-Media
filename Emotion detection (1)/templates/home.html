@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Classifier</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if session['username'] %}
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-section">
+        <h1>Welcome to Emotion Detection</h1>
+        <p>Analyze the emotions behind your text with AI-powered insights.</p>
+        <a href="#emotionForm" class="cta-button">Get Started</a>
+    </div>
+
+    <div id="emotionForm">
+        <h2>Emotion Detection in Text</h2>
+        <form id="emotionDetectionForm">
+            <textarea id="text" placeholder="Type your text here..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result">
+            <h3 id="prediction"></h3>
+        </div>
+        <div id="graph"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="/static/js/script.js"></script>
+
+</body>
+</html>

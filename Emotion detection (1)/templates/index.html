@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Classifier - Home</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script>
+        function redirectToEmotionForm() {
+            // Check if the user is logged in by checking the session variable
+            const isLoggedIn = {{ session['username'] is not none | tojson }};
+            if (isLoggedIn) {
+                window.location.href = "/home";  // Redirect to home.html
+            } else {
+                window.location.href = "/login";  // Redirect to login.html
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            {% if session['username'] %}
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <div class="hero-section">
+        <h1>Welcome to Emotion Detection</h1>
+        <p>Analyze the emotions behind your text with AI-powered insights.</p>
+        <a href="javascript:void(0);" class="cta-button" onclick="redirectToEmotionForm()">Get Started</a>
+    </div>
+    {% if session['username'] %}
+        <p>Hello, {{ session['username'] }}! You are logged in.</p>
+    {% else %}
+        <p>Please <a href="/login">log in</a> or <a href="/register">register</a> to use the emotion classifier.</p>
+    {% endif %}
+</body>
+</html>

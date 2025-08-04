@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Emotion Classifier</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-section">
+        <h2>About Emotion Detection in Text</h2>
+        
+        <section class="about-intro">
+            <h3>Introduction</h3>
+            <p>Emotion detection in text data involves identifying the emotions expressed in textual data. This can be a challenging task since emotions are often expressed in complex and subtle ways. Natural language processing (NLP) techniques can be used to analyze text data and identify the emotions expressed in it.</p>
+            <p>The aim of this project is to develop a model that uses NLP techniques to accurately detect emotions in text data. The model can be used for sentiment analysis, customer feedback analysis, and social media monitoring. The model is trained on a dataset of text data that has been labeled with the corresponding emotions expressed in it.</p>
+        </section>
+
+        <section class="about-dataset">
+            <h3>Dataset</h3>
+            <p>The dataset used for this project contains text data labeled with one of eight emotions: <strong>anger, disgust, fear, joy, neutral, sadness, shame,</strong> and <strong>surprise</strong>. The dataset contains a total of <strong>34,795 rows</strong>.</p>
+        </section>
+
+        <section class="about-methodology">
+            <h3>Methodology</h3>
+            <p>The methodology used for this project involves the following steps:</p>
+            <ul>
+                <li><strong>Preprocessing the text data:</strong> The text data is preprocessed by removing stop words, punctuation, user handles, and converting all text to lowercase.</li>
+                <li><strong>Model training:</strong> A machine learning model is trained on the extracted features to predict the emotions expressed in the text data. The models used for this project are <strong>Logistic Regression</strong> and <strong>MultinomialNB</strong>.</li>
+                <li><strong>Model evaluation:</strong> The trained model is evaluated on the test data to measure its accuracy in detecting emotions in text data.</li>
+            </ul>
+        </section>
+
+        <section class="about-results">
+            <h3>Results</h3>
+            <p>The Logistic Regression model achieved an accuracy of <strong>62%</strong> on the data.</p>
+        </section>
+    </div>
+
+</body>
+</html>
